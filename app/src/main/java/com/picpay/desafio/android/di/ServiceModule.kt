@@ -12,7 +12,8 @@ import javax.inject.Singleton
 object ServiceModule {
 
     @Singleton
-    @Provides
+    @Provides //pode ser injetado
+
     fun returnRepository(): Repository{
         return Repository()
     } //isso td p injetar no construtor da mainviewmodel

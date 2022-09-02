@@ -26,9 +26,11 @@ class UserAdapter(
         parent: ViewGroup,
         viewType: Int
     ): UserListItemVH { //cria item c base no layout
-        return UserListItemVH(ListItemUserBinding.inflate(
+        return UserListItemVH(
+            ListItemUserBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
-        ))
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: UserListItemVH, position: Int) { //processa dados
@@ -38,10 +40,14 @@ class UserAdapter(
         holder.binding.textUsername.text = users.username
         //holder.binding.imageProfile.setImageDrawable() como colocar img?
 
-
         holder.itemView.setOnClickListener {
             taskClickListener.onTaskClickListener(users)
         }
+
+       /* holder.binding.buttonDeletar.setOnClickListener{ TODO: CRIAR BOTAO
+            mainViewModel.updateUser(user)
+        }
+        */
 
     }
 

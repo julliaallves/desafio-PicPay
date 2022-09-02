@@ -17,4 +17,8 @@ class Repository { //p acessar api
         return RetrofitInstance.api.updateInfos(user)
     }
 
+    suspend fun deleteUser(id: Long): Response<User>{
+        return RetrofitInstance.api.deleteUser(id)
+    }
+
 }
